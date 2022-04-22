@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // import logo from './logo.svg';
-import "./App.css";
-import web3 from "./web3";
-import lottery from "./lottery";
+import './App.css';
+import web3 from './web3';
+import lottery from './lottery';
 
 class App extends Component {
   // web3.eth.getAccounts().then(console.log);
@@ -15,11 +15,11 @@ class App extends Component {
   // }
 
   state = {
-    manager: "",
+    manager: '',
     players: [],
-    balance: "",
-    value: "",
-    message: "",
+    balance: '',
+    value: '',
+    message: '',
   };
 
   async componentDidMount() {
@@ -35,14 +35,14 @@ class App extends Component {
 
     const accounts = await web3.eth.getAccounts();
 
-    this.setState({ message: "Waiting on transaction success..." });
+    this.setState({ message: 'Waiting on transaction success...' });
 
     await lottery.methods.enter().send({
       from: accounts[0],
-      value: web3.utils.toWei(this.state.value, "ether"),
+      value: web3.utils.toWei(this.state.value, 'ether'),
     });
 
-    this.setState({ message: "You have been entered!" });
+    this.setState({ message: 'You have been entered!' });
   };
 
   render() {
@@ -54,8 +54,8 @@ class App extends Component {
         </p>
         <p>
           There are currently <b>{this.state.players.length}</b> people entered,
-          competing to win{" "}
-          <b>{web3.utils.fromWei(this.state.balance, "ether")} ETH</b>!
+          competing to win{' '}
+          <b>{web3.utils.fromWei(this.state.balance, 'ether')} ETH</b>!
         </p>
         <hr />
         <form onSubmit={this.onSubmit}>
