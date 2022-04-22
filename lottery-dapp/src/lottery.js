@@ -1,7 +1,7 @@
 import web3 from './web3';
 
 // From 'Lottery Smart Contract' project.
-const contractAddress = '0x5F0DDbB79227803276f963b41f8014d1A90988ce';
+const contractAddress = '0x1ec8292ab41f4af08Ba5998d06aE33C0B72582C8';
 const abi = [
   {
     constant: true,
