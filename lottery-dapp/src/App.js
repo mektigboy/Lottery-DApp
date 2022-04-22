@@ -4,6 +4,7 @@ import './App.css';
 import web3 from './web3';
 import lottery from './lottery';
 
+// Modified.
 class App extends Component {
   // web3.eth.getAccounts().then(console.log);
 
